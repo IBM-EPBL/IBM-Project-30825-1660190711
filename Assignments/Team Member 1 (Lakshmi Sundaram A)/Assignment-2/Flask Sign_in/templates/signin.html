@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Signin Page</title>
+{% endblock %}
+
+{% block body %} 
+<center>
+<div class="card col-sm-4">
+    <div class="card-body">
+        <h2>Welcome to the Signin Page</h2><br>
+<form>
+    
+    <label for="fname">Name:</label><br>
+    <input type="text"  name="fname" class="form-control" required ><br>
+    
+    
+    <label for="fname">Password:</label><br><br>
+    <input type="password"  name="pwd" class="form-control" required><br>
+     
+    
+</form>
+<a href="{{ url_for('index') }}">
+    <button type="submit"  class="btn btn-primary" >
+    Submit
+    </button>
+</a>
+</center>
+
+{% endblock %}
+
