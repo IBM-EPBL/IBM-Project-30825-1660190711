@@ -1,12 +1,16 @@
-FROM python
+FROM python:3.6.5-alpine
+WORKDIR /app
+ADD . /app
 
-WORKDIR /inventory
-
-COPY requirements.txt requirements.txt
+RUN set -e;\
+	apk add --no-cache --virtual .build-deps \
+    		gcc \
+    		libc-dev \
+    		linux-headers \
+    		mariadb-dev \
+    		python3-dev \
+    		postgresql-dev \
+    ;
+COPY requirements.txt /app
 RUN pip install -r requirements.txt
-
-COPY . .
-
-EXPOSE 8080
-
-CMD ["python", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD ["python","main.py"]

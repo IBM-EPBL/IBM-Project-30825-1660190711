@@ -1,3 +1,3 @@
-# sprint 4️⃣
+# sprint 3️⃣
 
-    Deploying the application using Docker and Kubernetes
+    Integration of Sendgrid into our application
